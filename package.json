@@ -1,0 +1,14 @@
+{
+  "name": "in-memory-cache",
+  "main": "app.js",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.1"
+  }
+}
