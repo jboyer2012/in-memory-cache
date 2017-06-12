@@ -1,12 +1,24 @@
 const readline = require('readline');
+const parser = require('./cache/parser');
+const cacheController = require('./cache/cacheController');
 
 const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout,
+    prompt: '>'
 });
 
-rl.question('Enter cache command: \n', (answer) => {
-    console.log('Thanks for your answer: ' + answer);
+rl.prompt();
 
-    rl.close();
+rl.on('line', (line) => {
+    const commandObject = parser.parse(line.trim());
+
+    if(commandObject.command === "END"){
+        rl.close();
+    }
+
+    console.log(cacheController.executeCommand(commandObject));
+
+}).on('close', () => {
+    process.exit(0);
 });
