@@ -24,7 +24,7 @@ This cache also supports transactions:
 
 BEGIN: This command begins the transaction. Commands entered after this point and before COMMIT can be reversed.
 
-ROLLBACK: This command rolls back the commands entered since BEGIN. This will return the state of the cache to its state priort to BEGIN.
+ROLLBACK: This command rolls back the commands entered since BEGIN. This will return the state of the cache to its state prior to BEGIN.
 
 COMMIT: This commits and closes all transactions.
 
